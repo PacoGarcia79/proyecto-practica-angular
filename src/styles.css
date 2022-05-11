@@ -1,1 +1,77 @@
-/* You can add global styles to this file, and also import other style files */
+/* ESTILOS GENERALES */
+@font-face {
+  font-family: "fjalla";
+  src: url("./assets/fonts/FjallaOne-Regular.ttf") format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "nevis";
+  src: url("./assets/fonts/nevis.eot");
+  src: url("./assets/fonts/nevis.eot?#iefix") format('embedded-opentype'),
+  url("./assets/fonts/nevis.woff") format('woff'),
+  url("./assets/fonts/nevis.ttf") format('truetype'),
+  url("./assets/fonts/nevis.svg") format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "icons";
+  src: url("./assets/fonts/websymbols-regular-webfont.svg#WebSymbolsRegular") format('svg'),
+       url("./assets/fonts/websymbols-regular-webfont.eot");
+  src: url("./assets/fonts/websymbols-regular-webfont.eot?#iefix") format('embedded-opentype'),
+  url("./assets/fonts/websymbols-regular-webfont.woff") format('woff'),
+  url("./assets/fonts/websymbols-regular-webfont.ttf") format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+/* ESTILOS GENERALES */
+* {
+  padding: 0px;
+  margin: 0px;
+}
+
+body {
+  background-image: url("assets/img/paven.png");
+}
+
+a{
+  color: #529125;
+  text-decoration: none;
+}
+
+a:hover{
+  color: #285616;
+}
+
+a:visited{
+  color: #529125;
+}
+
+.red{
+  color: #9b2422 !important;
+}
+
+.blue{
+  color: #0c73f2 !important;
+}
+
+.orange{
+  color: #d69d2a !important;
+}
+
+.icon{
+  font-family: icons;
+  float: left;
+  margin-right: 5px;
+  margin-top: -1px;
+}
+
+.clearfix{
+  float: none;
+  clear: both;
+}
