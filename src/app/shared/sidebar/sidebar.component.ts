@@ -1,8 +1,11 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, FormArray, Validators, FormControl} from "@angular/forms";
 import {Observable, Subject, takeUntil} from "rxjs";
-import {CoreService} from "../../services/core.service";
-import {DynamicForm} from "../../models/core.model";
+import {Router} from "@angular/router";
+import {DynamicForm, Link} from "../../models/core.model";
+
+import {SidebarService} from "../../services/sidebar.service";
+
 
 @Component({
   selector: 'app-sidebar',
@@ -14,22 +17,27 @@ export class SidebarComponent implements OnInit, OnDestroy {
   private unsubscribe: Subject<void> = new Subject();
 
   public dynamicForms: DynamicForm[] = [];
+  public enlaces: Link[] = [];
 
-  constructor(private fb: FormBuilder, private coreService: CoreService) {
-    //this.dynamicForms = this.coreService.forms;
-
-    this.coreService.getdynamicForms().pipe(takeUntil(this.unsubscribe)).subscribe( resp => {
-      this.dynamicForms = resp;
-    });
+  constructor(private fb: FormBuilder, private sidebarService: SidebarService, private router: Router) {
   }
 
 
   ngOnInit() {
+    this.sidebarService.getdynamicForms().pipe(takeUntil(this.unsubscribe)).subscribe( resp => {
+      this.dynamicForms = resp;
+    });
+
+    this.sidebarService.getEnlaces().pipe(takeUntil(this.unsubscribe)).subscribe( resp => {
+      this.enlaces = resp;
+    });
   }
 
-  login(formGroup: FormGroup) {
+  login(formGroup: FormGroup, formId: String) {
     const {nombre, password} = formGroup.value;
     console.log(nombre, password)
+
+    this.router.navigate([`/${formId}`])
   }
 
   ngOnDestroy() {

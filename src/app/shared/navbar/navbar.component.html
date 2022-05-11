@@ -7,56 +7,18 @@
 
   <!--  Navbar-->
   <nav id="nav">
-    <ul>
+    <ul *ngFor="let enlace of navbarLinks">
       <li>
-        <a href="#">Inicio</a>
-      </li>
-      <li>
-        <a href="#">Contenido</a>
-      </li>
-      <li>
-        <a href="#">Requerimientos</a>
-      </li>
-      <li>
-        <a href="#">Lenguajes</a>
-        <ul>
-          <li>
-            <a href="#">HTML</a>
-          </li>
-          <li>
-            <a href="#">CSS</a>
-          </li>
+        <a [routerLink]="enlace.link.route">{{enlace.link.text}}</a>
+        <ul *ngIf="enlace.hasSubLinks">
+          <ng-container *ngFor="let subEnlace of enlace.subLinks">
+            <li>
+              <a [routerLink]="subEnlace.route">{{subEnlace.text}}</a>
+            </li>
+          </ng-container>
         </ul>
-      </li>
-      <li>
-        <a href="#">Frameworks</a>
-        <ul>
-          <li>
-            <a href="#">LESS</a>
-          </li>
-          <li>
-            <a href="#">SASS</a>
-          </li>
-          <li>
-            <a href="#">Bootstrap</a>
-          </li>
-        </ul>
-      </li>
-      <li>
-        <a href="#">Proyectos</a>
-      </li>
-      <li>
-        <a href="#">El instructor</a>
-      </li>
-      <li>
-        <a href="#">Reseñas</a>
-      </li>
-      <li>
-        <a href="#">Blog</a>
-      </li>
-      <li>
-        <a href="#">Contacto</a>
       </li>
     </ul>
   </nav>
+
 </header>

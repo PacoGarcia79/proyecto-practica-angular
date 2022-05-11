@@ -5,6 +5,8 @@ import {ReactiveFormsModule} from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import {DashboardModule} from "./dashboard/dashboard.module";
+import {AppRoutingModule} from "./app-routing.module";
+import {RouterModule} from "@angular/router";
 
 @NgModule({
   declarations: [
@@ -13,7 +15,9 @@ import {DashboardModule} from "./dashboard/dashboard.module";
   imports: [
     BrowserModule,
     DashboardModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AppRoutingModule,
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]

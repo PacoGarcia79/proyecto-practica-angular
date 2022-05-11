@@ -1,17 +1,20 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import {RouterModule} from "@angular/router";
+
 import {FooterComponent} from "./footer/footer.component";
-import {NavbarComponent} from "./navbar/navbar.component";
 import {SidebarComponent} from "./sidebar/sidebar.component";
 import {ReactiveFormsModule} from "@angular/forms";
+import {NavbarComponent} from "./navbar/navbar.component";
 
 
 @NgModule({
-  declarations: [FooterComponent, NavbarComponent, SidebarComponent],
+  declarations: [FooterComponent, SidebarComponent, NavbarComponent],
   imports: [
     CommonModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RouterModule
   ],
-  exports: [NavbarComponent, SidebarComponent, FooterComponent]
+  exports: [SidebarComponent, FooterComponent, NavbarComponent]
 })
 export class SharedModule { }

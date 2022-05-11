@@ -3,14 +3,19 @@ import { CommonModule } from '@angular/common';
 import {SharedModule} from "../shared/shared.module";
 import {DashboardComponent} from "./dashboard.component";
 import {ContenidoCentralModule} from "../contenido-central/contenido-central.module";
+import {FraseComponent} from "../contenido-central/frase/frase.component";
 
 @NgModule({
-  declarations: [DashboardComponent],
+  declarations: [DashboardComponent,
+    // FraseComponent
+  ],
   imports: [
     CommonModule,
     SharedModule,
-    ContenidoCentralModule
+    ContenidoCentralModule,
   ],
-  exports: [DashboardComponent]
+  exports: [DashboardComponent,
+    //FraseComponent
+  ]
 })
 export class DashboardModule { }

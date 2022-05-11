@@ -28,4 +28,23 @@ export interface Link{
   text: string;
 }
 
+export interface NavbarLink{
+  link: Link;
+  hasSubLinks?: boolean;
+  subLinks?: Link[];
+}
 
+
+export interface Noticia{
+  titulo: string;
+  texto: string;
+  fecha: string;
+  link: string;
+}
+
+export interface NoticiaBlock{
+  id: string;
+  class: string;
+  titulo: string;
+  noticias: Noticia[];
+}

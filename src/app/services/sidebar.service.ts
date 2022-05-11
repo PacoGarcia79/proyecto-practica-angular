@@ -6,14 +6,14 @@ import {Observable, of} from "rxjs";
 @Injectable({
   providedIn: 'root'
 })
-export class CoreService {
+export class SidebarService {
 
-  public controlsConfig = {
+  private controlsConfig = {
     nombre: ['', Validators.required],
     password: ['', Validators.required]
   }
 
-  public fieldsArray: Field[] = [
+  private fieldsArray: Field[] = [
     {
       label: 'Usuario',
       type: 'text', formControlName: 'nombre'
@@ -24,12 +24,12 @@ export class CoreService {
     }
   ];
 
-  public boton: ButtonType = {
+  private boton: ButtonType = {
     value: 'Entrar',
     type: 'submit'
   }
 
-  public formLinks: Link[] = [
+  private formLinks: Link[] = [
     {
       route: '#',
       text: 'Zona de alumnos'
@@ -42,9 +42,28 @@ export class CoreService {
       route: '#',
       text: 'Acceso a calificaciones'
     }
-  ]
+  ];
 
-  public forms: DynamicForm[] = [
+  private enlaces: Link[] = [
+    {
+      route: '#',
+      text: 'Máster en JavaScript'
+    },
+    {
+      route: '#',
+      text: 'Máster en PHP'
+    },
+    {
+      route: '#',
+      text: 'Máster en webs full-stack'
+    },
+    {
+      route: '#',
+      text: 'Curso de Git'
+    }
+  ];
+
+  private forms: DynamicForm[] = [
     {
       title: 'Entrar a la web',
       id: 'login',
@@ -75,7 +94,6 @@ export class CoreService {
       fields: this.fieldsArray,
       hasLinks: false
     }
-
   ];
 
   constructor(private fb: FormBuilder) {
@@ -84,4 +102,10 @@ export class CoreService {
   getdynamicForms(): Observable<DynamicForm[]> {
     return of(this.forms);
   }
+
+  getEnlaces(): Observable<Link[]> {
+    return of(this.enlaces);
+  }
+
+
 }
