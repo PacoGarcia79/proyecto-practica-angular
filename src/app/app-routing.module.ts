@@ -12,9 +12,13 @@ import {InstructorComponent} from "./contenido-central/instructor/instructor.com
 import {ResenasComponent} from "./contenido-central/resenas/resenas.component";
 import {BlogComponent} from "./contenido-central/blog/blog.component";
 import {ContactoComponent} from "./contenido-central/contacto/contacto.component";
-import {LoginComponent} from "./contenido-central/login/login.component";
+import {PersonalComponent} from "./contenido-central/personal/personal.component";
 import {Aula1Component} from "./contenido-central/aula1/aula1.component";
 import {Aula2Component} from "./contenido-central/aula2/aula2.component";
+import {HtmlComponent} from "./contenido-central/html/html.component";
+import {CssComponent} from "./contenido-central/css/css.component";
+import {SassComponent} from "./contenido-central/sass/sass.component";
+import {BootstrapComponent} from "./contenido-central/bootstrap/bootstrap.component";
 
 const routes: Routes = [
   {
@@ -25,7 +29,11 @@ const routes: Routes = [
       {path: 'requerimientos', component: RequerimientosComponent},
       {path: 'contenido', component: ContenidoComponent},
       {path: 'lenguajes', component: LenguajesComponent},
+      {path: 'html', component: HtmlComponent},
+      {path: 'css', component: CssComponent},
       {path: 'frameworks', component: FrameworksComponent},
+      {path: 'sass', component: SassComponent},
+      {path: 'bootstrap', component: BootstrapComponent},
       {path: 'proyectos', component: ProyectosComponent},
       {path: 'instructor', component: InstructorComponent},
       {path: 'resenas', component: ResenasComponent},
@@ -33,7 +41,7 @@ const routes: Routes = [
       {path: 'contacto', component: ContactoComponent},
       {path: 'aula1', component: Aula1Component},
       {path: 'aula2', component: Aula2Component},
-      {path: 'login', component: LoginComponent}
+      {path: 'personal', component: PersonalComponent}
     ]
   },
   {path: '**', redirectTo: ''},

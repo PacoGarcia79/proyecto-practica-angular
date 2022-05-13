@@ -3,7 +3,6 @@ import {Component, OnDestroy, OnInit} from '@angular/core';
 import {NavbarService} from "../../services/navbar.service";
 import {NavbarLink} from "../../models/core.model";
 import {Subject, takeUntil} from "rxjs";
-import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-navbar',
@@ -15,7 +14,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
   private unsubscribe : Subject<void> = new Subject();
   navbarLinks: NavbarLink[] = [];
 
-  constructor(public navbarService: NavbarService, private router: Router) { }
+  constructor(public navbarService: NavbarService) { }
 
   ngOnInit(): void {
     this.navbarService.getLinksNavbar().pipe(takeUntil(this.unsubscribe)).subscribe( resp => {

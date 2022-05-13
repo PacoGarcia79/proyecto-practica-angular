@@ -38,11 +38,11 @@ export class NavbarService {
       subLinks: [
         {
           text: 'HTML',
-          route: '#'
+          route: '/html'
         },
         {
           text: 'CSS',
-          route: '#'
+          route: '/css'
         },
       ]
     },
@@ -54,16 +54,12 @@ export class NavbarService {
       hasSubLinks: true,
       subLinks: [
         {
-          text: 'LESS',
-          route: '#'
-        },
-        {
           text: 'SASS',
-          route: '#'
+          route: '/sass'
         },
         {
           text: 'Bootstrap',
-          route: '#'
+          route: '/bootstrap'
         },
       ]
     },

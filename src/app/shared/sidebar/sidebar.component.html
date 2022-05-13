@@ -1,28 +1,42 @@
 <aside id="aside">
 
-    <div [id]="form.id" class="widget" *ngFor="let form of dynamicForms">
-      <h3 [class]="form.class">{{form.title}}</h3>
-      <form [formGroup]="form.formName" (ngSubmit)="login(form.formName, form.id)">
-        <ng-container *ngFor="let field of form.fields" >
-          <label>{{field.label}}</label>
-          <input [type]="field.type" formControlName="{{field.formControlName}}"/>
-        </ng-container>
-        <input [type]="form.button.type" [value]="form.button.value" *ngIf="form.hasButton && form.button"/>
-        <ng-container *ngIf="form.hasLinks && form.formLinks">
-            <a *ngFor="let link of form.formLinks" href="{{link.route}}">{{link.text}}</a>
-        </ng-container>
-      </form>
-    </div>
+  <div class="widget">
+    <h3>Registrar usuario</h3>
+    <form [formGroup]="registroForm" (ngSubmit)="registrar()">
+      <label>Nombre</label>
+      <input type="text" formControlName="nombre"/>
+      <label>Email</label>
+      <input type="email" formControlName="email"/>
+      <label>Contraseña</label>
+      <input type="password" formControlName="password"/>
+      <input type="submit" value="Registrar" [disabled]="registroForm.invalid"/>
+    </form>
+  </div>
+
+  <div [id]="form.id" class="widget" *ngFor="let form of dynamicForms">
+    <h3 [class]="form.class">{{form.title}}</h3>
+    <form [formGroup]="form.formName" (ngSubmit)="login(form.formName, form.id)">
+      <ng-container *ngFor="let field of form.fields">
+        <label>{{field.label}}</label>
+        <input [type]="field.type" formControlName="{{field.formControlName}}"/>
+      </ng-container>
+      <input [type]="form.button.type" [value]="form.button.value" *ngIf="form.hasButton && form.button"
+      [disabled]="form.formName.invalid"/>
+      <ng-container *ngIf="form.hasLinks && form.formLinks">
+        <a *ngFor="let link of form.formLinks" href="{{link.route}}">{{link.text}}</a>
+      </ng-container>
+    </form>
+  </div>
 
   <div id="enlaces" class="widget">
     <h3>Enlaces de interés</h3>
-   <ul>
-     <ng-container *ngFor="let link of enlaces">
-       <li>
-         <a [routerLink]="link.route">{{link.text}}</a>
-       </li>
-     </ng-container>
-   </ul>
+    <ul>
+      <ng-container *ngFor="let link of enlaces">
+        <li>
+          <a [routerLink]="link.route">{{link.text}}</a>
+        </li>
+      </ng-container>
+    </ul>
   </div>
 
 </aside>

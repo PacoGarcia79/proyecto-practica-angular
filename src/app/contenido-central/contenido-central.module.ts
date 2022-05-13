@@ -15,9 +15,13 @@ import {InstructorComponent} from './instructor/instructor.component';
 import {ResenasComponent} from './resenas/resenas.component';
 import {BlogComponent} from './blog/blog.component';
 import {ContactoComponent} from './contacto/contacto.component';
-import {LoginComponent} from './login/login.component';
+import {PersonalComponent} from './personal/personal.component';
 import {Aula1Component} from './aula1/aula1.component';
 import {Aula2Component} from './aula2/aula2.component';
+import { HtmlComponent } from './html/html.component';
+import { CssComponent } from './css/css.component';
+import { SassComponent } from './sass/sass.component';
+import { BootstrapComponent } from './bootstrap/bootstrap.component';
 
 @NgModule({
   declarations: [
@@ -33,15 +37,16 @@ import {Aula2Component} from './aula2/aula2.component';
     ResenasComponent,
     BlogComponent,
     ContactoComponent,
-    LoginComponent,
+    PersonalComponent,
     Aula1Component,
-    Aula2Component
+    Aula2Component,
+    HtmlComponent,
+    CssComponent,
+    SassComponent,
+    BootstrapComponent
   ],
   exports: [
-    ContenidoCentralComponent,
-    // FraseComponent,
-    // NoticiasComponent,
-    // RequerimientosComponent
+    ContenidoCentralComponent
   ],
   imports: [
     CommonModule,

@@ -9,14 +9,14 @@ import {Observable, of} from "rxjs";
 export class SidebarService {
 
   private controlsConfig = {
-    nombre: ['', Validators.required],
+    email: ['', Validators.required],
     password: ['', Validators.required]
   }
 
   private fieldsArray: Field[] = [
     {
-      label: 'Usuario',
-      type: 'text', formControlName: 'nombre'
+      label: 'Email',
+      type: 'text', formControlName: 'email'
     },
     {
       label: 'Contraseña',
@@ -65,8 +65,8 @@ export class SidebarService {
 
   private forms: DynamicForm[] = [
     {
-      title: 'Entrar a la web',
-      id: 'login',
+      title: 'Área personal',
+      id: 'personal',
       hasButton: true,
       button: this.boton,
       formName: this.fb.group(this.controlsConfig),
@@ -99,7 +99,7 @@ export class SidebarService {
   constructor(private fb: FormBuilder) {
   }
 
-  getdynamicForms(): Observable<DynamicForm[]> {
+  getDynamicForms(): Observable<DynamicForm[]> {
     return of(this.forms);
   }
 
