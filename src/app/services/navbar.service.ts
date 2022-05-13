@@ -97,8 +97,7 @@ export class NavbarService {
         route: '/contacto'
       },
       hasSubLinks: false
-    },
-
+    }
   ];
 
   constructor() { }

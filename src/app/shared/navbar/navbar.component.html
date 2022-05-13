@@ -7,16 +7,21 @@
 
   <!--  Navbar-->
   <nav id="nav">
-    <ul *ngFor="let enlace of navbarLinks">
-      <li>
-        <a [routerLink]="enlace.link.route">{{enlace.link.text}}</a>
-        <ul *ngIf="enlace.hasSubLinks">
-          <ng-container *ngFor="let subEnlace of enlace.subLinks">
-            <li>
-              <a [routerLink]="subEnlace.route">{{subEnlace.text}}</a>
-            </li>
-          </ng-container>
-        </ul>
+    <ul class="enlaces">
+      <ng-container *ngFor="let enlace of navbarLinks">
+        <li>
+          <a [routerLink]="enlace.link.route">{{enlace.link.text}}</a>
+          <ul *ngIf="enlace.hasSubLinks">
+            <ng-container *ngFor="let subEnlace of enlace.subLinks">
+              <li>
+                <a [routerLink]="subEnlace.route">{{subEnlace.text}}</a>
+              </li>
+            </ng-container>
+          </ul>
+        </li>
+      </ng-container>
+      <li class="logout">
+        <a (click)="logout()">Cerrar sesión</a>
       </li>
     </ul>
   </nav>

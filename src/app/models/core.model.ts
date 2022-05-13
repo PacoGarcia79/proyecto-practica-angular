@@ -34,7 +34,6 @@ export interface NavbarLink{
   subLinks?: Link[];
 }
 
-
 export interface Noticia{
   titulo: string;
   texto: string;
@@ -47,4 +46,18 @@ export interface NoticiaBlock{
   class: string;
   titulo: string;
   noticias: Noticia[];
+}
+
+// export interface Usuario{
+//   uid: string;
+//   nombre: string;
+//   email: string;
+// }
+
+export class Usuario{
+  constructor(
+    public uid: string,
+    public nombre: string,
+    public email: string,
+  ){}
 }

@@ -19,6 +19,7 @@ import {HtmlComponent} from "./contenido-central/html/html.component";
 import {CssComponent} from "./contenido-central/css/css.component";
 import {SassComponent} from "./contenido-central/sass/sass.component";
 import {BootstrapComponent} from "./contenido-central/bootstrap/bootstrap.component";
+import {AuthGuard} from "./services/auth.guard";
 
 const routes: Routes = [
   {
@@ -39,9 +40,9 @@ const routes: Routes = [
       {path: 'resenas', component: ResenasComponent},
       {path: 'blog', component: BlogComponent},
       {path: 'contacto', component: ContactoComponent},
-      {path: 'aula1', component: Aula1Component},
-      {path: 'aula2', component: Aula2Component},
-      {path: 'personal', component: PersonalComponent}
+      {path: 'aula1', component: Aula1Component, canActivate: [AuthGuard]},
+      {path: 'aula2', component: Aula2Component, canActivate: [AuthGuard]},
+      {path: 'personal', component: PersonalComponent, canActivate: [AuthGuard]}
     ]
   },
   {path: '**', redirectTo: ''},
